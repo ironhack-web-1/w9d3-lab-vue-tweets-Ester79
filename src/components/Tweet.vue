@@ -7,7 +7,7 @@
     <div className="body">
       <div className="top">
         <User :user="user"></User>
-
+        <Timestamp :time="timestamp"></Timestamp>
       </div>
 
       <p className="message">
@@ -30,6 +30,7 @@
 <script>
 import ProfileImage from "./ProfileImage.vue";
 import User from "./User.vue";
+import Timestamp from "./Timestamp.vue";
 export default {
   name: 'Tweet',
   props: {
@@ -41,7 +42,7 @@ export default {
     message: String,
     image: String,
   },
-  components: { ProfileImage, User }
+  components: { ProfileImage, User, Timestamp }
 }
 </script>
 
