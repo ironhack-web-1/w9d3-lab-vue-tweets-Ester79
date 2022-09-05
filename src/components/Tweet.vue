@@ -6,16 +6,12 @@
 
     <div className="body">
       <div className="top">
-        <span className="user">
-          <span className="name">{{user.name}}</span>
-          <span className="handle">{{user.handle}}</span>
-        </span>
+        <User :user="user"></User>
 
-        <span className="timestamp">{{timestamp}}</span>
       </div>
 
       <p className="message">
-       {{message}} 
+        {{ message }}
       </p>
 
       <div className="actions">
@@ -33,17 +29,19 @@
 
 <script>
 import ProfileImage from "./ProfileImage.vue";
+import User from "./User.vue";
 export default {
-    props: {
-        user: {
-            name: String,
-            handle: String,
-        },
-        timestamp: String,
-        message: String,
-        image: String,
+  name: 'Tweet',
+  props: {
+    user: {
+      name: String,
+      handle: String,
     },
-    components: { ProfileImage }
+    timestamp: String,
+    message: String,
+    image: String,
+  },
+  components: { ProfileImage, User }
 }
 </script>
 
