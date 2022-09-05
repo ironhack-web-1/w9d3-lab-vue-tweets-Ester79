@@ -1,6 +1,8 @@
 <template>
   <div className="tweet">
-    <img src="https://i.imgur.com/b0EdHVV.jpg" className="profile" alt="profile" />
+    <!--<img src="https://i.imgur.com/b0EdHVV.jpg" className="profile" alt="profile" />-->
+    <ProfileImage image="user.imgage"></ProfileImage>
+
 
     <div className="body">
       <div className="top">
@@ -30,16 +32,18 @@
 </template>
 
 <script>
+import ProfileImage from "./ProfileImage.vue";
 export default {
-  props: {
-    user: {
-      name: String,
-      handle: String,
+    props: {
+        user: {
+            name: String,
+            handle: String,
+        },
+        timestamp: String,
+        message: String,
+        image: String,
     },
-    timestamp: String,
-    message: String,
-    image: String,
-  },
+    components: { ProfileImage }
 }
 </script>
 
